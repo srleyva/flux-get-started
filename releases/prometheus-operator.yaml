@@ -15,5 +15,5 @@ spec:
     version: 5.15.0
   values:
     prometheusOperator:
-      createCustomResource: false
+      createCustomResource: true
       cleanupCustomResourceBeforeInstall: true
