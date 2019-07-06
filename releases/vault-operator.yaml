@@ -1,0 +1,18 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: vault-k8s-operator
+  namespace: vault
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: semver:~4.0
+spec:
+  releaseName: vault-k8s-operator
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: vault-operator
+    version: 0.1.1
+  values:
+    etcd-operator:
+      enabled: true
